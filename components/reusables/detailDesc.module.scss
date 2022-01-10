@@ -1,0 +1,378 @@
+@import "../../styles/base.module.scss";
+
+.detailDesc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px;
+  padding: 8px;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-position: 90% 0%;
+    transition: 0.4s $cubic1;
+    color: white;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    user-select: none;
+  }
+
+  .shortDesc {
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  @include sh {
+    .title {
+      font-size: 1.6rem;
+    }
+
+    .shortDesc {
+      font-size: 1rem;
+    }
+  }
+  @include tv {
+    width: 49.5%;
+    box-shadow: none;
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    .shortDesc {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+.buddy {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $buddyCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.control {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $controlCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.edit {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $editCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.recept {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $receptCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.serve {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $serveCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.emergency {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $emergencyCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.press {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $pressCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.pressPro {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $pressProCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+.philosophy {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02),
+    $philosophyCol,
+    rgba(0, 0, 0, 0.02)
+  );
+  background-size: 200% 100%;
+  background-position: 10% 0%;
+}
+
+.modalBg {
+  position: fixed;
+  backdrop-filter: blur(16px);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.01);
+  z-index: 6;
+
+  animation: openAnime 0.4s;
+
+  @keyframes openAnime {
+    0% {
+      backdrop-filter: blur(0);
+    }
+    100% {
+      backdrop-filter: blur(16px);
+    }
+  }
+
+  .modal {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    outline: none;
+    padding: 4px;
+    background-color: white;
+
+    animation: insertAnime 0.4s $cubic1;
+
+    @keyframes insertAnime {
+      0% {
+        top: 100%;
+        opacity: 0;
+      }
+      100% {
+        top: 50%;
+        opacity: 1;
+      }
+    }
+
+    .contentWrapper {
+      width: 100%;
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+        user-select: none;
+      }
+
+      .content {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        user-select: none;
+      }
+    }
+
+    .returnWrapper {
+      width: 100%;
+      height: 32px;
+      margin-top: 8px;
+
+      .returnBtn {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        color: white;
+        border: none;
+        font-size: 1rem;
+        background-color: white;
+
+        &:hover {
+          opacity: 0.9;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .buddyModal {
+    border: 4px solid $buddyCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $buddyCol;
+      }
+    }
+  }
+  .controlModal {
+    border: 4px solid $controlCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $controlCol;
+      }
+    }
+  }
+  .editModal {
+    border: 4px solid $editCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $editCol;
+      }
+    }
+  }
+  .receptModal {
+    border: 4px solid $receptCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $receptCol;
+      }
+    }
+  }
+  .serveModal {
+    border: 4px solid $serveCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $serveCol;
+      }
+    }
+  }
+  .emergencyModal {
+    border: 4px solid $emergencyCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $emergencyCol;
+      }
+    }
+  }
+  .pressModal {
+    border: 4px solid $pressCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $pressCol;
+        color: black;
+      }
+    }
+  }
+  .pressProModal {
+    border: 4px solid $pressProCol;
+
+    .returnWrapper {
+      .returnBtn {
+        background-color: $pressProCol;
+        color: black;
+      }
+    }
+  }
+
+  @include sh {
+    .modal {
+      width: 80%;
+
+      .contentWrapper {
+        .title {
+          font-size: 1.6rem;
+        }
+
+        .content {
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+  @include tv {
+    .modal {
+      width: 540px;
+
+      .contentWrapper {
+        .title {
+          font-size: 1.2rem;
+        }
+
+        .content {
+          font-size: 0.7rem;
+          line-height: 1rem;
+        }
+      }
+
+      .returnWrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .returnBtn {
+          width: auto;
+          height: auto;
+          padding: 4px 16px;
+          font-size: 0.5rem;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+
+.modalBgClose {
+  animation: closeAnime 0.4s;
+  animation-fill-mode: forwards;
+
+  @keyframes closeAnime {
+    0% {
+      backdrop-filter: blur(16px);
+    }
+    100% {
+      backdrop-filter: blur(0);
+    }
+  }
+
+  .modal {
+    animation: outsertAnime 0.4s $cubic1;
+    animation-fill-mode: forwards;
+
+    @keyframes outsertAnime {
+      0% {
+        top: 50%;
+        opacity: 1;
+      }
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+  }
+}

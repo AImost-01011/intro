@@ -1,0 +1,221 @@
+@import "../../styles/base.module.scss";
+
+.detailNav {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  transition: 0.4s $cubic1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .navTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+
+    .topTitle {
+      font-weight: 700;
+      width: 120px;
+      font-size: 1rem;
+      margin: 0 8px;
+      user-select: none;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        color: grey;
+        transition: 0.4s;
+      }
+    }
+
+    .sectionTitle {
+      font-weight: 700;
+      font-size: 1.4rem;
+      user-select: none;
+    }
+
+    .elseBtn {
+      height: 36px;
+      width: 36px;
+      border: none;
+      border-radius: 100%;
+      margin: 0 8px;
+      background-color: rgba(0, 0, 0, 0.14);
+      font-size: 1.2rem;
+      font-weight: 700;
+      transform: rotateZ(-90deg);
+      color: white;
+
+      transition: 0.4s $cubic1;
+    }
+  }
+
+  .navList {
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    transition: 0.1s;
+
+    .itemWrapper {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      .tag {
+        width: 8px;
+        height: 100%;
+        margin-right: 16px;
+      }
+
+      .btnTitle {
+        font-size: 1rem;
+        font-family: "Noto Sans JP", sans-serif;
+      }
+
+      .buddy {
+        background-color: $buddyCol;
+      }
+      .control {
+        background-color: $controlCol;
+      }
+      .edit {
+        background-color: $editCol;
+      }
+      .recept {
+        background-color: $receptCol;
+      }
+      .serve {
+        background-color: $serveCol;
+      }
+      .emergency {
+        background-color: $emergencyCol;
+      }
+      .press {
+        background-color: $pressCol;
+      }
+      .pressPro {
+        background-color: $pressProCol;
+      }
+      .philosophy {
+        background-color: $philosophyCol;
+      }
+    }
+  }
+
+  @include sh {
+    .navTop {
+      height: 80px;
+      .topTitle {
+        width: initial;
+        font-size: 1.2rem;
+      }
+    }
+
+    .navList {
+      .itemWrapper {
+        height: 40px;
+
+        .btnTitle {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  @include tv {
+    .navTop {
+      padding: 0 16%;
+      height: 40px;
+
+      .topTitle {
+        font-size: 1.1rem;
+      }
+
+      .sectionTitle {
+        font-size: 1rem;
+      }
+
+      .elseBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+      }
+    }
+
+    .navList {
+      .itemWrapper {
+        height: 20px;
+
+        .btnTitle {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+.detailNavActive {
+  transition: 0.4s $cubic1;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+
+  .navList {
+    overflow: hidden;
+    height: 0;
+    transition: 0.4s $cubic1;
+  }
+
+  @include tv {
+    background-color: rgba(255, 255, 255, 0.2);
+    .navList {
+      padding: 0 16%;
+    }
+  }
+}
+
+.detailNavOpen {
+  .navTop {
+    .elseBtn {
+      transition: 0.4s $cubic1;
+      transform: rotateZ(-270deg);
+    }
+  }
+
+  .navList {
+    height: 240px;
+    transition: 0.4s $cubic1;
+  }
+
+  @include sh {
+    .navList {
+      height: 320px;
+    }
+  }
+  @include tv {
+    .navList {
+      padding: 0 16%;
+      height: 160px;
+    }
+  }
+}

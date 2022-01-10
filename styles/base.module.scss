@@ -1,0 +1,31 @@
+$buddyCol: #78cc25;
+$controlCol: #00afcc;
+$editCol: #6a5acd;
+$receptCol: #ff8c00;
+$emergencyCol: #ff4500;
+$serveCol: #191970;
+$pressCol: #00fa9a;
+$pressProCol: #ffd700;
+$philosophyCol: #c0c0c0;
+
+$cubic1: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+$sm-h: 480px;
+$tab-v: 896px;
+$tab-h: 1024px;
+
+@mixin sh {
+  @media only screen and (min-width: $sm-h) {
+    @content;
+  }
+}
+@mixin tv {
+  @media only screen and (min-width: $tab-v) {
+    @content;
+  }
+}
+@mixin th {
+  @media only screen and (min-width: $tab-h) {
+    @content;
+  }
+}

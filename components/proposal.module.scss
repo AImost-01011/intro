@@ -1,0 +1,156 @@
+@import "../styles/base.module.scss";
+
+.proposal {
+  width: 100%;
+  position: relative;
+  height: 1400px;
+
+  .messageBox {
+    backdrop-filter: blur(16px);
+    position: absolute;
+    color: white;
+    border-radius: 4px;
+    user-select: none;
+
+    width: 96%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    padding: 8px;
+    line-height: 1.6;
+
+    .tip {
+      font-size: 0.7rem;
+      color: rgb(218, 218, 218);
+    }
+  }
+
+  .box1 {
+    top: 120px;
+  }
+
+  .box2 {
+    top: 340px;
+  }
+
+  .box3 {
+    top: 600px;
+  }
+
+  .bigMessageBox {
+    position: absolute;
+    color: white;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(16px);
+    background-color: rgba($color: white, $alpha: 0.2);
+    border-radius: 4px;
+
+    width: 96%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 140px;
+    padding: 12px;
+
+    .bigMessage {
+      font-weight: bold;
+
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .content {
+      line-height: 1.8;
+      text-align: center;
+
+      font-size: 0.8rem;
+    }
+  }
+
+  @include sh {
+    .messageBox {
+      width: 400px;
+      left: initial;
+      transform: initial;
+      font-size: 1rem;
+    }
+
+    .box1 {
+      top: 80px;
+      left: 10%;
+    }
+
+    .box2 {
+      right: 14%;
+    }
+
+    .box3 {
+      left: 17%;
+    }
+
+    .bigMessageBox {
+      width: 96%;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 140px;
+      padding: 12px;
+
+      .bigMessage {
+        font-size: 2rem;
+        margin-bottom: 16px;
+      }
+
+      .content {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include tv {
+    height: 1000px;
+    .messageBox {
+      width: auto;
+      left: initial;
+      transform: initial;
+      font-size: 0.8rem;
+
+      .tip {
+        font-size: 0.4rem;
+        color: rgb(218, 218, 218);
+      }
+    }
+    .box1 {
+      top: 80px;
+      left: 6%;
+    }
+
+    .box2 {
+      top: 240px;
+      right: 7%;
+    }
+
+    .box3 {
+      left: 12%;
+      top: 400px;
+    }
+
+    .bigMessageBox {
+      width: 500px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 140px;
+      padding: 12px;
+
+      .bigMessage {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+      }
+
+      .content {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

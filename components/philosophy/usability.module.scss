@@ -1,0 +1,226 @@
+@import "../../styles/base.module.scss";
+
+.usability {
+  padding: 16px 8px;
+
+  .titleWrapper {
+    width: 100%;
+    height: 60px;
+    border: 3px solid $philosophyCol;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      user-select: none;
+    }
+  }
+
+  .topDescWrapper {
+    margin: 8px auto 0;
+    background: linear-gradient(45deg, #f2f4f4, #cfcfcf);
+    padding: 8px;
+    width: 88%;
+    border-radius: 4px;
+
+    .topDesc {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      user-select: none;
+    }
+  }
+
+  .contentWrapperOpen {
+    position: relative;
+    height: 660px;
+    overflow: hidden;
+
+    .magic {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: 2.2rem;
+      font-weight: 700;
+      width: 200px;
+      text-align: center;
+
+      background: linear-gradient(
+        45deg,
+        rgba(148, 37, 238, 1) 0%,
+        rgba(238, 37, 227, 1) 25%,
+        white 50%,
+        white 100%
+      );
+      background-size: 400%;
+      background-clip: text;
+      color: transparent;
+      background-position: 90% 0%;
+      user-select: none;
+
+      z-index: 10;
+
+      transition: 0.6s $cubic1;
+    }
+
+    .descWrapper {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 88%;
+      height: 630px;
+      border-radius: 4px;
+      padding: 8px;
+      background: linear-gradient(
+        45deg,
+        rgba(148, 37, 238, 1) 0%,
+        rgba(238, 37, 227, 1) 100%
+      );
+
+      transition: 0.6s $cubic1;
+
+      .descTop {
+        margin-top: 70px;
+        font-size: 1.2rem;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+        user-select: none;
+      }
+
+      .desc {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: white;
+        line-height: 1.5rem;
+        width: 100%;
+        user-select: none;
+      }
+    }
+  }
+
+  .contentWrapper {
+    .magic {
+      top: 200px;
+      text-align: center;
+      font-size: 3rem;
+
+      background-position: 10% 0%;
+
+      transition: 0.4s $cubic1;
+    }
+
+    .descWrapper {
+      opacity: 0;
+      top: 300px;
+
+      transition: 0.4s $cubic1;
+    }
+  }
+
+  @include sh {
+    .topDescWrapper {
+      .topDesc {
+        width: 400px;
+        margin: auto;
+      }
+    }
+
+    .contentWrapperOpen {
+      .descWrapper {
+        .desc {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  @include tv {
+    display: grid;
+    grid-template:
+      ".. ....... ....... topDesc .." 50px
+      ".. title   ....... topDesc .." 100px
+      ".. ....... ....... topDesc .." 50px
+      ".. ....... ....... ....... .." 8px
+      ".. content content content .." 460px
+      /1fr 360px 1fr 480px 1fr;
+
+    .titleWrapper {
+      grid-area: title;
+      width: auto;
+      height: initial;
+      margin: initial;
+    }
+
+    .topDescWrapper {
+      grid-area: topDesc;
+      width: initial;
+      height: initial;
+      margin: initial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .topDesc {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        margin: initial;
+      }
+    }
+
+    .contentWrapperOpen {
+      grid-area: content;
+      height: initial;
+
+      .magic {
+        left: 100px;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-size: 4rem;
+        width: initial;
+        background-position: 10% 0;
+      }
+
+      .descWrapper {
+        width: 400px;
+        height: 400px;
+        left: initial;
+        right: 16px;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        .descTop {
+          margin-top: initial;
+        }
+
+        .desc {
+          font-size: 0.7rem;
+          line-height: 1.2rem;
+        }
+      }
+    }
+
+    .contentWrapper {
+      .magic {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .descWrapper {
+        left: initial;
+        right: 16px;
+        top: 90%;
+      }
+    }
+  }
+}

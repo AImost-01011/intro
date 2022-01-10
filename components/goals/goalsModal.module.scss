@@ -1,0 +1,95 @@
+@import "../../styles/base.module.scss";
+
+.goalsModal {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 8px;
+
+  .contentWrapper {
+    .contentTitle {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+      user-select: none;
+    }
+    .content {
+      font-size: 0.8rem;
+      line-height: 1.4rem;
+      user-select: none;
+    }
+  }
+
+  .returnWrapper {
+    height: 32px;
+    width: 100%;
+    margin-top: 8px;
+
+    .returnBtn {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: linear-gradient(45deg, #56f4eb, #56a8f4, #56f4eb);
+      background-size: 200% 100%;
+      background-position-x: 0%;
+      color: white;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        background-position-x: 100%;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  @include sh {
+    .contentWrapper {
+      .contentTitle {
+        font-size: 1.4rem;
+      }
+
+      .content {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+
+  @include tv {
+    .contentWrapper {
+      .contentTitle {
+        font-size: 1.2rem;
+      }
+
+      .content {
+        font-size: 0.7rem;
+        line-height: 1rem;
+      }
+    }
+
+    .returnWrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .returnBtn {
+        width: auto;
+        height: auto;
+        padding: 4px 16px;
+        font-size: 0.5rem;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  @include th {
+    .contentWrapper {
+      .contentTitle {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

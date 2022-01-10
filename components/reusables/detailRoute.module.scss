@@ -1,0 +1,155 @@
+@import "../../styles/base.module.scss";
+
+.detailRoute {
+  width: 100%;
+  padding: 8px;
+
+  .routesWrapper {
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .routeWrapper {
+      width: 33%;
+      height: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      overflow: hidden;
+      position: relative;
+
+      .routeTag {
+        width: 8px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.2s;
+      }
+      .route_0 {
+        background-color: $buddyCol;
+      }
+      .route_1 {
+        background-color: $controlCol;
+      }
+      .route_2 {
+        background-color: $editCol;
+      }
+      .route_3 {
+        background-color: $receptCol;
+      }
+      .route_4 {
+        background-color: $serveCol;
+      }
+      .route_5 {
+        background-color: $emergencyCol;
+      }
+      .route_6 {
+        background-color: $pressCol;
+      }
+      .route_7 {
+        background-color: $pressProCol;
+      }
+      .route_8 {
+        background-color: $philosophyCol;
+      }
+      .toTop {
+        background-color: black;
+      }
+
+      .routeTo {
+        font-size: 1rem;
+        font-family: "Noto Sans JP", sans-serif;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 14px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        .routeTag {
+          width: 100%;
+          transition: 0.4s;
+        }
+
+        .routeTo {
+          color: white;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+
+  .topPageWrapper {
+    width: 100%;
+
+    .routeWrapper {
+      width: 100%;
+      height: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      overflow: hidden;
+      position: relative;
+
+      .routeTag {
+        width: 8px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.2s;
+        background-color: grey;
+      }
+
+      .routeTo {
+        font-size: 1rem;
+        font-family: "Noto Sans JP", sans-serif;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 14px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        .routeTag {
+          width: 100%;
+          transition: 0.4s;
+        }
+
+        .routeTo {
+          color: white;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+
+  @include sh {
+    .routeWrapper {
+      height: 24px;
+      .routeTo {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  @include tv {
+    padding: 8px 10%;
+
+    .routeWrapper {
+      .routeTo {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,294 @@
+@import "../styles/base.module.scss";
+
+.goals {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 16px 8px;
+
+  .titleOuter {
+    height: 120px;
+    background: linear-gradient(45deg, #56f4eb, #56a8f4);
+    border-radius: 4px;
+
+    padding: 3px;
+    width: 100%;
+    height: 60px;
+    animation: bgAnime 8s;
+    animation-iteration-count: infinite;
+    background-size: 200% 200%;
+
+    @keyframes bgAnime {
+      0% {
+        background-position: 0 0;
+      }
+      25% {
+        background-position: 0 100%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      75% {
+        background-position: 100% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .titleInner {
+      background-color: white;
+      border-radius: 4px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      user-select: none;
+
+      font-size: 1.8rem;
+    }
+  }
+
+  .contents {
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+
+    .imageWrapper {
+      overflow: hidden;
+      border-radius: 4px;
+
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+
+    .messageWrapper {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+
+      .messageOuter {
+        background: linear-gradient(45deg, #56f4eb, #56a8f4, #56f4eb);
+        width: 100%;
+        padding: 4px;
+        border-radius: 4px;
+        background-size: 200% 100%;
+        transition: 0.4s;
+        cursor: pointer;
+        user-select: none;
+
+        margin: 8px 0;
+        height: 80px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+
+        animation: bgAnime 8s;
+        animation-iteration-count: infinite;
+        background-size: 200% 200%;
+
+        @keyframes bgAnime {
+          0% {
+            background-position: 0 0;
+          }
+          25% {
+            background-position: 0 100%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          75% {
+            background-position: 100% 0;
+          }
+          100% {
+            background-position: 0 0;
+          }
+        }
+
+        &:hover {
+          .messageInner {
+            background-color: rgba(255, 255, 255, 0.9);
+          }
+        }
+
+        .messageInner {
+          height: 100%;
+          background-color: white;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          font-size: 1.2rem;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
+  @include sh {
+    .titleOuter {
+      .titleInner {
+        font-size: 2rem;
+      }
+    }
+
+    .contents {
+      .messageWrapper {
+        .messageOuter {
+          margin: 4px 0;
+
+          .messageInner {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include tv {
+    padding: 16px 10%;
+
+    .titleOuter {
+      height: 60px;
+      .titleInner {
+        font-size: 1.6rem;
+      }
+    }
+
+    .contents {
+      margin-top: 8px;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .imageWrapper {
+        width: 48%;
+      }
+
+      .messageWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 50%;
+
+        .messageOuter {
+          margin: 4px 0;
+          width: 100%;
+          height: auto;
+
+          .messageInner {
+            padding: 12px 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include th {
+    padding: 16px 10%;
+    .contents {
+      flex-direction: row;
+
+      .imageWrapper {
+        height: 400px;
+        margin-right: 4px;
+      }
+
+      .messageWrapper {
+        flex-direction: column;
+        justify-content: space-around;
+
+        .messageOuter {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.modalBg {
+  position: fixed;
+  backdrop-filter: blur(16px);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.01);
+  z-index: 6;
+  animation: openAnime 0.4s linear;
+
+  @keyframes openAnime {
+    0% {
+      backdrop-filter: blur(0);
+    }
+    100% {
+      backdrop-filter: blur(16px);
+    }
+  }
+
+  .modal {
+    position: absolute;
+    width: 90%;
+    max-height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #56f4eb, #56a8f4);
+    border-radius: 4px;
+    outline: none;
+    padding: 4px;
+
+    animation: insertAnime 0.4s $cubic1;
+
+    @keyframes insertAnime {
+      0% {
+        top: 100%;
+        opacity: 0;
+      }
+      100% {
+        top: 50%;
+        opacity: 1;
+      }
+    }
+
+    @include th {
+      width: 700px;
+    }
+    @include tv {
+      width: 700px;
+    }
+  }
+}
+
+.modalBgClose {
+  animation: closeAnime 0.4s;
+
+  @keyframes closeAnime {
+    0% {
+      backdrop-filter: blur(16px);
+    }
+    100% {
+      backdrop-filter: blur(0);
+    }
+  }
+
+  .modal {
+    animation: outsertAnime 0.4s $cubic1;
+
+    @keyframes outsertAnime {
+      0% {
+        top: 50%;
+        opacity: 1;
+      }
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import "../styles/base.module.scss";
+
+.top {
+  height: 100vh;
+  position: relative;
+
+  .fixedBox {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 110%;
+
+    .relativeBox {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .blurBox {
+        position: absolute;
+        backdrop-filter: blur(16px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        padding: 8px;
+        left: 0;
+        text-align: center;
+
+        .title {
+          font-weight: bold;
+          color: white;
+
+          font-size: 2rem;
+          margin-bottom: 8px;
+          width: 300px;
+          user-select: none;
+        }
+
+        .subTitle {
+          color: white;
+          font-size: 0.8rem;
+          user-select: none;
+        }
+      }
+    }
+  }
+
+  @include sh {
+    .fixedBox {
+      .relativeBox {
+        .blurBox {
+          .title {
+            font-size: 2.2rem;
+            width: auto;
+          }
+
+          .subTitle {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include tv {
+    .fixedBox {
+      .relativeBox {
+        .blurBox {
+          width: 560px;
+          padding: 8px;
+          left: 20px;
+          border-radius: 8px;
+
+          .title {
+            font-size: 2.4rem;
+          }
+
+          .subTitle {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

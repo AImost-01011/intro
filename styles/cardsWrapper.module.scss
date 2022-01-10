@@ -1,0 +1,63 @@
+@import "../styles/base.module.scss";
+
+.cardsWrapper {
+  margin: 0 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  @include sp {
+    margin: 0 8px;
+  }
+}
+
+.routeBtns {
+  height: 100px;
+  margin: 30px 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  .btnBody {
+    width: 400px;
+    height: 80px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(
+      30deg,
+      rgba($color: $controlCol, $alpha: 0.4),
+      30%,
+      rgba($color: $editCol, $alpha: 0.8)
+    );
+    background-size: 200% 100%;
+    cursor: pointer;
+    transition: $closeTransition;
+
+    &:hover {
+      animation: gradientAnime $openTransition ease-in-out;
+      animation-fill-mode: forwards;
+      @keyframes gradientAnime {
+        from {
+          background-position-x: 0%;
+        }
+        to {
+          background-position-x: 100%;
+        }
+      }
+    }
+
+    .btnWord {
+      font-size: 1.6rem;
+      color: white;
+
+      &::after {
+        content: "   >>";
+        background: linear-gradient(90deg, $editCol, $controlCol);
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+}

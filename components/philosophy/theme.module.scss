@@ -1,0 +1,575 @@
+@import "../../styles/base.module.scss";
+
+.theme {
+  width: 100%;
+  background-color: white;
+
+  .titleWrapper {
+    width: auto;
+    height: 60px;
+    border: 3px solid $philosophyCol;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      user-select: none;
+    }
+  }
+
+  .topDescWrapper {
+    margin: 8px auto 0;
+    background: linear-gradient(45deg, #f2f4f4, #cfcfcf);
+    padding: 8px;
+    width: 88%;
+    border-radius: 4px;
+
+    .topDesc {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      user-select: none;
+    }
+  }
+
+  .themeWrapper {
+    width: 100%;
+    padding: 16px 8px;
+    position: relative;
+    height: 800px;
+
+    .themeTitle {
+      font-size: 1.4rem;
+      font-weight: 700;
+      z-index: 10;
+
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      top: 464px;
+      width: 80%;
+      text-align: center;
+      user-select: none;
+    }
+
+    .logoWrapper {
+      margin: auto;
+      z-index: 6;
+
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 88%;
+      height: 400px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      top: 32px;
+
+      .relativeBox {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: #f2f4f4;
+        user-select: none;
+      }
+    }
+
+    .descWrapper {
+      margin: auto;
+      z-index: 3;
+      background-color: #f2f4f4;
+
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 88%;
+      height: 300px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      bottom: 48px;
+
+      .desc {
+        margin-top: 36px;
+        font-size: 0.9rem;
+        user-select: none;
+      }
+    }
+  }
+
+  .lightWrapperOpen {
+    .themeTitle {
+      background: linear-gradient(45deg, #e6bf21, #e62141);
+      background-clip: text;
+      color: transparent;
+
+      transition: 0.6s $cubic1;
+    }
+
+    .logoWrapper {
+      .relativeBox {
+        background: linear-gradient(
+          45deg,
+          #e6bf21 0%,
+          #e62141 25%,
+          #f2f4f4 50%,
+          #f2f4f4 100%
+        );
+        background-size: 400%;
+        background-position: 10% 0;
+        transition: 0.6s $cubic1;
+
+        .juicy,
+        .plus,
+        .pop {
+          font-size: 3rem;
+          font-weight: 700;
+          position: absolute;
+          opacity: 1;
+
+          transition: 0.6s $cubic1;
+        }
+
+        .juicy {
+          top: 100px;
+          left: 40px;
+          animation: fluffyAnime 6s ease-in-out;
+          animation-iteration-count: infinite;
+          animation-delay: (random(3) + s);
+          color: white;
+        }
+        .plus {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          animation: fluffyAnime2 6s ease-in-out;
+          animation-iteration-count: infinite;
+          animation-delay: (random(10) s / 10);
+          color: white;
+        }
+        .pop {
+          bottom: 100px;
+          right: 50px;
+          animation: fluffyAnime 6s ease-in-out;
+          animation-iteration-count: infinite;
+          animation-delay: (random(3) + s);
+          color: white;
+        }
+
+        @keyframes fluffyAnime {
+          0% {
+            transform: translateY(-4px) rotate(2deg);
+          }
+          50% {
+            transform: translateY(4px) rotate(-2deg);
+          }
+          100% {
+            transform: translateY(-4px) rotate(2deg);
+          }
+        }
+
+        @keyframes fluffyAnime2 {
+          0% {
+            transform: translate(-50%, -54%);
+          }
+          50% {
+            transform: translate(-50%, -46%);
+          }
+          100% {
+            transform: translate(-50%, -54%);
+          }
+        }
+      }
+    }
+
+    .descWrapper {
+      transition: 0.6s $cubic1;
+    }
+  }
+
+  .lightWrapper {
+    .themeTitle {
+      top: 200px;
+      font-size: 2.2rem;
+      width: 80%;
+      text-align: center;
+
+      transition: 0.4s $cubic1;
+    }
+
+    .logoWrapper {
+      background-color: white;
+      box-shadow: none;
+
+      .relativeBox {
+        background-position: 90% 0;
+
+        transition: 0.4s $cubic1;
+        .juicy,
+        .plus,
+        .pop {
+          font-size: 2rem;
+          opacity: 0;
+
+          transition: 0.4s $cubic1;
+        }
+      }
+    }
+
+    .descWrapper {
+      bottom: 380px;
+      box-shadow: none;
+      overflow: hidden;
+
+      transition: 0.4s $cubic1;
+    }
+  }
+
+  .darkWrapperOpen {
+    background-color: black;
+
+    .themeTitle {
+      color: white;
+
+      transition: 0.4s;
+    }
+
+    .logoWrapper {
+      .relativeBox {
+        background-color: #393939;
+
+        .cool,
+        .plus,
+        .solid {
+          color: white;
+          font-size: 3rem;
+          font-weight: 700;
+          position: absolute;
+          opacity: 1;
+
+          transition: 0.3s;
+          transition-delay: 0.1s;
+        }
+
+        .cool {
+          top: 100px;
+          left: 40px;
+        }
+
+        .plus {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .solid {
+          bottom: 100px;
+          right: 40px;
+        }
+      }
+    }
+
+    .descWrapper {
+      background-color: #393939;
+
+      transition: 0.4s;
+
+      .desc {
+        color: white;
+
+        transition: 0.4s;
+      }
+    }
+  }
+
+  .darkWrapper {
+    .themeTitle {
+      top: 200px;
+      font-size: 2.2rem;
+      width: 80%;
+      text-align: center;
+
+      transition: 0.3s;
+    }
+
+    .logoWrapper {
+      .relativeBox {
+        .cool,
+        .plus,
+        .solid {
+          transition: 0.2s;
+          opacity: 0;
+        }
+
+        .cool {
+          left: 300px;
+        }
+
+        .solid {
+          right: 300px;
+        }
+      }
+    }
+
+    .descWrapper {
+      background-color: black;
+      transition: 0.3s;
+
+      .desc {
+        opacity: 0;
+      }
+    }
+  }
+
+  @include sh {
+    .topDescWrapper {
+      .topDesc {
+        width: 400px;
+        margin: auto;
+      }
+    }
+
+    .lightWrapperOpen {
+      .themeTitle {
+        font-size: 2.4rem;
+        width: 400px;
+      }
+
+      .logoWrapper {
+        .relativeBox {
+          .juicy {
+            left: 160px;
+          }
+
+          .pop {
+            right: 160px;
+          }
+        }
+      }
+
+      .descWrapper {
+        .desc {
+          width: 410px;
+          margin-top: 42px;
+        }
+      }
+    }
+
+    .lightWrapper {
+      .themeTitle {
+        top: 170px;
+        font-size: 3.8rem;
+        width: 400px;
+      }
+    }
+
+    .darkWrapperOpen {
+      .themeTitle {
+        font-size: 2.4rem;
+        width: 400px;
+      }
+
+      .logoWrapper {
+        .relativeBox {
+          .cool {
+            left: 160px;
+          }
+
+          .solid {
+            right: 160px;
+          }
+        }
+      }
+
+      .descWrapper {
+        .desc {
+          width: 410px;
+          margin-top: 42px;
+        }
+      }
+    }
+
+    .darkWrapper {
+      .themeTitle {
+        top: 170px;
+        font-size: 3.8rem;
+        width: 400px;
+      }
+    }
+  }
+
+  @include tv {
+    display: grid;
+    grid-template:
+      ".. title ..... topDesc .." 100px
+      ".. ..... ..... ....... .." 8px
+      ".. light light light   .." 500px
+      ".. ..... ..... ....... .." 8px
+      ".. dark  dark  dark    .." 500px
+      /1fr 360px 1fr 480px 1fr;
+
+    .titleWrapper {
+      grid-area: title;
+      width: auto;
+      height: initial;
+      margin: initial;
+    }
+
+    .topDescWrapper {
+      grid-area: topDesc;
+      width: initial;
+      height: initial;
+      margin: initial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .topDesc {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        margin: initial;
+      }
+    }
+
+    .lightWrapperOpen {
+      grid-area: light;
+      height: initial;
+
+      .themeTitle {
+        top: 64px;
+        right: 50px;
+        left: initial;
+        transform: initial;
+        width: 310px;
+      }
+
+      .logoWrapper {
+        width: 440px;
+        height: 440px;
+        left: 16px;
+        top: 30px;
+        transform: initial;
+
+        transition: 0.6s;
+
+        .relativeBox {
+          .juicy {
+            left: 100px;
+          }
+
+          .pop {
+            right: 110px;
+          }
+        }
+      }
+
+      .descWrapper {
+        left: initial;
+        width: 380px;
+        height: 440px;
+        top: 30px;
+        right: 16px;
+        transform: initial;
+        margin: initial;
+        padding: 16px;
+
+        .desc {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .lightWrapper {
+      .themeTitle {
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: auto;
+        font-size: 3rem;
+      }
+
+      .logoWrapper {
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition: 0.4s;
+      }
+
+      .descWrapper {
+        right: 200px;
+      }
+    }
+
+    .darkWrapperOpen {
+      grid-area: dark;
+      height: initial;
+
+      .themeTitle {
+        top: 64px;
+        right: 50px;
+        left: initial;
+        transform: initial;
+        width: 310px;
+      }
+
+      .logoWrapper {
+        width: 440px;
+        height: 440px;
+        left: 16px;
+        top: 30px;
+        transform: initial;
+
+        transition: 0.4s;
+
+        .relativeBox {
+          .cool {
+            left: 100px;
+          }
+
+          .solid {
+            right: 100px;
+          }
+        }
+      }
+
+      .descWrapper {
+        left: initial;
+        width: 380px;
+        height: 440px;
+        top: 30px;
+        right: 16px;
+        transform: initial;
+        margin: initial;
+        padding: 16px;
+
+        .desc {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .darkWrapper {
+      .themeTitle {
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        font-size: 3rem;
+      }
+
+      .logoWrapper {
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        transition: 0.2s;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../styles/base.module.scss";
+
+.detailBody {
+  width: 100%;
+  padding: 16px 8px;
+  background-color: white;
+
+  .titleWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      user-select: none;
+    }
+  }
+
+  .buddy {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $buddyCol);
+  }
+  .control {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $controlCol);
+  }
+  .edit {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $editCol);
+  }
+  .recept {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $receptCol);
+  }
+  .serve {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.02),
+      rgba($color: $serveCol, $alpha: 0.8)
+    );
+  }
+  .emergency {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $emergencyCol);
+  }
+  .press {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $pressCol);
+  }
+  .pressPro {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $pressProCol);
+  }
+  .philosophy {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), $philosophyCol);
+  }
+
+  @include sh {
+    .titleWrapper {
+      .title {
+        font-size: 1.7rem;
+      }
+    }
+  }
+  @include tv {
+    padding: 0 10%;
+
+    .titleWrapper {
+      .title {
+        font-size: 1.4rem;
+      }
+    }
+
+    .contentWrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}

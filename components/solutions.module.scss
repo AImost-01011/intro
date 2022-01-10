@@ -1,0 +1,204 @@
+@import "../styles/base.module.scss";
+
+.solutions {
+  width: 100%;
+
+  padding: 16px 8px;
+
+  .title {
+    border-radius: 4px;
+    border: 4px solid rgba(0, 0, 0, 0.4);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.7);
+
+    width: 100%;
+    height: 60px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    user-select: none;
+  }
+
+  .contentsWrapper {
+    width: 100%;
+    padding: 0;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .contentBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 4px;
+      transition: 0.2s;
+      user-select: none;
+      cursor: pointer;
+      color: white;
+
+      padding: 8px;
+      flex-direction: row;
+      margin: 4px 0;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      border: none;
+      font-family: "Noto Sans JP", sans-serif;
+
+      .contentTitle {
+        transition: 0.2s;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+
+      .content {
+        transition: 0.2s;
+
+        font-size: 0.8rem;
+        text-align: right;
+      }
+    }
+
+    .buddy {
+      grid-area: buddy;
+      background-color: $buddyCol;
+    }
+
+    .control {
+      grid-area: control;
+      background-color: $controlCol;
+    }
+
+    .edit {
+      grid-area: edit;
+      background-color: $editCol;
+    }
+
+    .recept {
+      grid-area: recept;
+      background-color: $receptCol;
+    }
+
+    .emergency {
+      grid-area: emergency;
+      background-color: $emergencyCol;
+    }
+
+    .serve {
+      grid-area: serve;
+      background-color: $serveCol;
+    }
+
+    .press {
+      grid-area: press;
+      background-color: $pressCol;
+      color: black;
+    }
+
+    .pressPro {
+      grid-area: pressPro;
+      background-color: $pressProCol;
+      color: black;
+    }
+
+    .philosophy {
+      grid-area: philosophy;
+      background-color: $philosophyCol;
+      color: black;
+    }
+  }
+
+  @include sh {
+    padding: 16px 8px;
+
+    .contentsWrapper {
+      width: 100%;
+      padding: 0;
+      margin-top: 16px;
+      display: grid;
+
+      grid-template:
+        ".. buddy      .. control  .." 200px
+        ".. ....       .. ....     .." 8px
+        ".. edit       .. recept   .." 200px
+        ".. ....       .. ....     .." 8px
+        ".. emergency  .. serve    .." 200px
+        ".. ....       .. ....     .." 8px
+        ".. press      .. pressPro .." 200px
+        ".. ....       .. ....     .." 8px
+        ".. philosophy .. ....     .." 200px
+        /1fr 10fr 1fr 10fr 1fr;
+
+      .contentBox {
+        flex-direction: column;
+        justify-content: space-around;
+
+        .contentTitle {
+          font-size: 1.8rem;
+        }
+
+        .content {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include tv {
+    padding: 16px 10%;
+    .title {
+      height: 60px;
+      font-size: 1.6rem;
+    }
+
+    .contentsWrapper {
+      grid-template:
+        ".. buddy  .. control   .. edit       .." 160px
+        ".. ...... .. ......... .. .......... .." 8px
+        ".. recept .. emergency .. serve      .." 160px
+        ".. ...... .. ......... .. .......... .." 8px
+        ".. press  .. pressPro  .. philosophy .." 160px
+        /1fr 200px 1fr 200px 1fr 200px 1fr;
+
+      .contentBox {
+        box-shadow: none;
+
+        &:hover {
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          transition: 0.2s;
+
+          .contentTitle {
+            font-size: 1.3rem;
+            transition: 0.2s;
+          }
+
+          .content {
+            font-size: 0.8rem;
+            transition: 0.2s;
+          }
+        }
+
+        .contentTitle {
+          font-size: 1.2rem;
+        }
+
+        .content {
+          font-size: 0.7rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include th {
+    padding: 16px 10%;
+
+    .contentsWrapper {
+      .contentBox {
+        box-shadow: none;
+      }
+    }
+  }
+}
