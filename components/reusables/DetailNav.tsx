@@ -62,8 +62,6 @@ const DetailNav: React.FC = () => {
   useEffect(() => {
     isNav(support.scroll) ? setIsActive(st.detailNavActive) : setIsActive("");
     if (support.scroll < 500) setIsOpen(false);
-
-    // support.scroll > 500 ? setIsActive(st.detailNavActive) : setIsActive("");
   }, [support.scroll]);
 
   const openClick = () => setIsOpen((prevProp) => !prevProp);

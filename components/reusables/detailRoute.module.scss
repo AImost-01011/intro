@@ -3,10 +3,9 @@
 .detailRoute {
   width: 100%;
   padding: 8px;
+  background-color: white;
 
   .routesWrapper {
-    background-color: white;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -64,6 +63,7 @@
 
       .routeTo {
         font-size: 1rem;
+        font-weight: 500;
         font-family: "Noto Sans JP", sans-serif;
         position: absolute;
         top: 50%;
@@ -113,6 +113,7 @@
 
       .routeTo {
         font-size: 1rem;
+        font-weight: 500;
         font-family: "Noto Sans JP", sans-serif;
         position: absolute;
         top: 50%;

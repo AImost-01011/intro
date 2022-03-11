@@ -5,16 +5,10 @@ export const topMove = (scroll: number): number => {
   return -scroll / 3;
 };
 
-export const topOpacity = (scroll: number): number => {
-  if (sv()) return 1 - scroll / 700;
-  else if (sh()) return 1 - scroll / 1000;
-  if (scroll < 600) return 1 - scroll / 600;
-  else return 0;
-};
-
 export const blurMove = (scroll: number): number => {
-  if (sv()) return 80 + scroll / 8;
-  else if (sh()) return 100 + scroll / 3;
-  else if (tv() || th()) return 140 + scroll / 3;
+  if (scroll < 0) return 0;
+  else if (sv()) return 40 + scroll / 8;
+  else if (sh()) return 80 + scroll / 3;
+  else if (tv() || th()) return 40 + scroll / 3;
   else return 140 + scroll / 4;
 };

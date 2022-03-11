@@ -4,7 +4,7 @@ export const isLight = (scroll: number): boolean => {
   if (sv() || sh()) {
     return scroll > 1000;
   } else if (tv() || th()) {
-    return scroll > 550;
+    return scroll > 800;
   } else return true;
 };
 
@@ -12,6 +12,6 @@ export const isDark = (scroll: number): boolean => {
   if (sv() || sh()) {
     return scroll > 1800;
   } else if (tv() || th()) {
-    return scroll > 1080;
+    return scroll > 800;
   } else return true;
 };

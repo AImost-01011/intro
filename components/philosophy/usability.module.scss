@@ -1,16 +1,16 @@
 @import "../../styles/base.module.scss";
 
 .usability {
-  padding: 16px 8px;
+  background-color: white;
 
   .titleWrapper {
-    width: 100%;
     height: 60px;
     border: 3px solid $philosophyCol;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 8px;
 
     .title {
       font-size: 1.8rem;
@@ -33,78 +33,105 @@
     }
   }
 
-  .contentWrapperOpen {
-    position: relative;
-    height: 660px;
+  .contentWrapper {
     overflow: hidden;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .magic {
-      position: absolute;
-      top: 32px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      font-size: 2.2rem;
-      font-weight: 700;
-      width: 200px;
-      text-align: center;
-
+    .magicCardOpen {
+      position: relative;
+      width: 88%;
+      height: 720px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
       background: linear-gradient(
         45deg,
         rgba(148, 37, 238, 1) 0%,
-        rgba(238, 37, 227, 1) 25%,
-        white 50%,
-        white 100%
+        rgba(238, 37, 227, 1) 30%,
+        #f2f4f4 60%,
+        #f2f4f4 100%
       );
       background-size: 400%;
-      background-clip: text;
-      color: transparent;
-      background-position: 90% 0%;
-      user-select: none;
-
-      z-index: 10;
+      background-position-x: 10%;
 
       transition: 0.6s $cubic1;
-    }
 
-    .descWrapper {
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      z-index: 6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      .magic {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 2.8rem;
+        font-weight: 700;
+        white-space: nowrap;
 
-      width: 88%;
-      height: 630px;
-      border-radius: 4px;
-      padding: 8px;
-      background: linear-gradient(
-        45deg,
-        rgba(148, 37, 238, 1) 0%,
-        rgba(238, 37, 227, 1) 100%
-      );
+        background: linear-gradient(
+          45deg,
+          rgba(148, 37, 238, 1) 0%,
+          rgba(238, 37, 227, 1) 25%,
+          white 50%,
+          white 100%
+        );
+        background-size: 400%;
+        background-clip: text;
+        color: transparent;
+        background-position: 90% 0%;
+        user-select: none;
 
-      transition: 0.6s $cubic1;
+        z-index: 10;
+
+        transition: 0.6s $cubic1;
+      }
 
       .descTop {
-        margin-top: 70px;
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 1.2rem;
-        text-align: center;
         color: white;
         font-weight: 500;
         user-select: none;
+        white-space: nowrap;
+
+        transition: 0.6s $cubic1;
       }
 
       .desc {
-        margin-top: 8px;
+        padding: 8px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
         font-size: 0.9rem;
         color: white;
         line-height: 1.5rem;
-        width: 100%;
         user-select: none;
+
+        transition: 0.6s $cubic1;
+      }
+    }
+
+    .magicCard {
+      background-position-x: 90%;
+
+      transition: 0.4s $cubic1;
+
+      .magic {
+        background-position: 10% 0;
+        font-size: 2rem;
+        top: 120px;
+
+        transition: 0.4s $cubic1;
+      }
+
+      .descTop,
+      .desc {
+        opacity: 0;
+        transition: 0.4s $cubic1;
       }
     }
   }
@@ -148,12 +175,12 @@
   @include tv {
     display: grid;
     grid-template:
-      ".. ....... ....... topDesc .." 50px
-      ".. title   ....... topDesc .." 100px
-      ".. ....... ....... topDesc .." 50px
+      ".. title   title   title   .." 60px
       ".. ....... ....... ....... .." 8px
-      ".. content content content .." 460px
-      /1fr 360px 1fr 480px 1fr;
+      ".. topDesc topDesc topDesc .." 180px
+      ".. ....... ....... ....... .." 8px
+      ".. content content content .." 500px
+      /1fr 400px 1fr 400px 1fr;
 
     .titleWrapper {
       grid-area: title;
@@ -172,54 +199,99 @@
       align-items: center;
 
       .topDesc {
-        font-size: 0.7rem;
-        line-height: 1.2rem;
+        width: initial;
+        font-size: 1rem;
+        line-height: 1.7rem;
         margin: initial;
       }
     }
 
-    .contentWrapperOpen {
+    .contentWrapper {
       grid-area: content;
+      width: initial;
       height: initial;
 
-      .magic {
-        left: 100px;
-        top: 50%;
-        transform: translate(0, -50%);
-        font-size: 4rem;
-        width: initial;
-        background-position: 10% 0;
-      }
+      .magicCardOpen {
+        width: 100%;
+        height: 460px;
 
-      .descWrapper {
-        width: 400px;
-        height: 400px;
-        left: initial;
-        right: 16px;
-        top: 50%;
-        transform: translate(0, -50%);
+        .magic {
+          font-size: 3.2rem;
+        }
 
         .descTop {
-          margin-top: initial;
+          font-size: 1.4rem;
         }
 
         .desc {
-          font-size: 0.7rem;
-          line-height: 1.2rem;
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+
+      .magicCard {
+        .magic {
+          font-size: 2.8rem;
+        }
+
+        .descTop {
+          top: 150px;
+        }
+
+        .desc {
+          bottom: -20px;
         }
       }
     }
+  }
+
+  @include th {
+    grid-template:
+      ".. title   title   title   .." 60px
+      ".. ....... ....... ....... .." 8px
+      ".. topDesc topDesc topDesc .." 180px
+      ".. ....... ....... ....... .." 8px
+      ".. content content content .." 500px
+      /2fr 500px 1fr 500px 2fr;
 
     .contentWrapper {
-      .magic {
-        left: 50%;
-        transform: translate(-50%, -50%);
+      .magicCardOpen {
+        .magic {
+          left: 80px;
+          top: calc(50% - 40px);
+          transform: translateY(-50%);
+        }
+
+        .descTop {
+          left: 80px;
+          top: calc(50% + 40px);
+          transform: translateY(-50%);
+        }
+
+        .desc {
+          width: 60%;
+          left: initial;
+          bottom: initial;
+          right: 40px;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
       }
 
-      .descWrapper {
-        left: initial;
-        right: 16px;
-        top: 90%;
+      .magicCard {
+        .magic {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .descTop {
+          top: calc(50% + 80px);
+        }
+
+        .desc {
+          top: calc(50% + 40px);
+        }
       }
     }
   }

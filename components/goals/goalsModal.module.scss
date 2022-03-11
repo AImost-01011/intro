@@ -8,13 +8,13 @@
 
   .contentWrapper {
     .contentTitle {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 500;
       margin-bottom: 4px;
       user-select: none;
     }
     .content {
-      font-size: 0.8rem;
+      font-size: 1rem;
       line-height: 1.4rem;
       user-select: none;
     }
@@ -36,6 +36,7 @@
       font-size: 1rem;
       border-radius: 4px;
       transition: 0.2s;
+      font-family: "Noto Sans JP", sans-serif;
 
       &:hover {
         cursor: pointer;
@@ -61,12 +62,12 @@
   @include tv {
     .contentWrapper {
       .contentTitle {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .content {
-        font-size: 0.7rem;
-        line-height: 1rem;
+        font-size: 1rem;
+        line-height: 1.6rem;
       }
     }
 
@@ -79,7 +80,8 @@
         width: auto;
         height: auto;
         padding: 4px 16px;
-        font-size: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
         border-radius: 2px;
       }
     }
@@ -88,7 +90,21 @@
   @include th {
     .contentWrapper {
       .contentTitle {
+        font-size: 1.6rem;
         margin-bottom: 8px;
+      }
+
+      .content {
+        font-size: 1rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    .returnWrapper {
+      height: 40px;
+      .returnBtn {
+        font-size: 1rem;
+        margin-right: 8px;
       }
     }
   }

@@ -19,23 +19,17 @@ const Theme: React.FC = () => {
         </div>
       </div>
 
-      <div
-        className={`${st.themeWrapper} ${st.lightWrapperOpen} ${
-          isLight(support.scroll) ? "" : st.lightWrapper
-        }`}
-      >
-        <span className={st.themeTitle}>Light Theme</span>
-
-        <div className={st.logoWrapper}>
-          <div className={st.relativeBox}>
-            <span className={st.juicy}>Juicy</span>
-            <span className={st.plus}>+</span>
-            <span className={st.pop}>Pop</span>
-          </div>
-        </div>
-
-        <div className={st.descWrapper}>
-          <div className={st.desc}>
+      <div className={st.themeWrapper + " " + st.light}>
+        <div
+          className={`${st.themeCard} ${st.lightWrapperOpen} ${
+            isLight(support.scroll) ? "" : st.lightWrapper
+          }`}
+        >
+          <span className={st.themeTitle}>Light Theme</span>
+          <span className={st.juicy}>Juicy</span>
+          <span className={st.plus}>+</span>
+          <span className={st.pop}>Pop</span>
+          <div className={st.descWrapper}>
             Lightのテーマ、見ていて飽きないテーマ
             <br />
             <br />
@@ -50,7 +44,34 @@ const Theme: React.FC = () => {
         </div>
       </div>
 
-      <div
+      <div className={st.themeWrapper + " " + st.dark}>
+        <div
+          className={`${st.themeCard} ${st.darkWrapperOpen} ${
+            isDark(support.scroll) ? "" : st.darkWrapper
+          }`}
+        >
+          <span className={st.themeTitle}>Dark Theme</span>
+          <span className={st.cool}>Cool</span>
+          <span className={st.plus}>+</span>
+          <span className={st.solid}>Solid</span>
+          <div className={st.descWrapper}>
+            <div>
+              Darkのテーマ、極限まで集中力を高めるテーマ
+              <br />
+              <br />
+              見た目を黒に統一して全体の一体感をもたせます。
+              <br />
+              無駄の削ぎ落とした最低限のアニメーションですっきりとした使い心地を目指します。
+              <br />
+              黒地に色を使うとコントラストで目を引きます。
+              <br />
+              注目すべき場所に色彩をあしらって必要な情報を取り逃がさないようにします。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div
         className={`${st.themeWrapper} ${st.darkWrapperOpen} ${
           isDark(support.scroll) ? "" : st.darkWrapper
         }`}
@@ -79,7 +100,7 @@ const Theme: React.FC = () => {
             注目すべき場所に色彩をあしらって必要な情報を取り逃がさないようにします。
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

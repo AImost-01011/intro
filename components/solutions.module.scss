@@ -149,53 +149,61 @@
   @include tv {
     padding: 16px 10%;
     .title {
-      height: 60px;
-      font-size: 1.6rem;
+      height: 80px;
+      font-size: 2.2rem;
     }
 
     .contentsWrapper {
       grid-template:
-        ".. buddy  .. control   .. edit       .." 160px
+        ".. buddy  .. control   .. edit       .." 180px
         ".. ...... .. ......... .. .......... .." 8px
-        ".. recept .. emergency .. serve      .." 160px
+        ".. recept .. emergency .. serve      .." 180px
         ".. ...... .. ......... .. .......... .." 8px
-        ".. press  .. pressPro  .. philosophy .." 160px
+        ".. press  .. pressPro  .. philosophy .." 180px
         /1fr 200px 1fr 200px 1fr 200px 1fr;
 
       .contentBox {
         box-shadow: none;
+
+        .contentTitle {
+          font-size: 1.8rem;
+        }
+
+        .content {
+          font-size: 1rem;
+          text-align: center;
+        }
 
         &:hover {
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
           transition: 0.2s;
 
           .contentTitle {
-            font-size: 1.3rem;
+            font-size: 2rem;
             transition: 0.2s;
           }
 
           .content {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             transition: 0.2s;
           }
-        }
-
-        .contentTitle {
-          font-size: 1.2rem;
-        }
-
-        .content {
-          font-size: 0.7rem;
-          text-align: center;
         }
       }
     }
   }
 
   @include th {
-    padding: 16px 10%;
+    padding: 16px 6%;
 
     .contentsWrapper {
+      grid-template:
+        ".. buddy  .. control   .. edit       .." 180px
+        ".. ...... .. ......... .. .......... .." 8px
+        ".. recept .. emergency .. serve      .." 180px
+        ".. ...... .. ......... .. .......... .." 8px
+        ".. press  .. pressPro  .. philosophy .." 180px
+        /100px 2fr 80px 2fr 80px 2fr 100px;
+
       .contentBox {
         box-shadow: none;
       }

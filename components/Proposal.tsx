@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import forestImg from "../public/forest.jpg";
 import st from "./proposal.module.scss";
-import { proposalOpacity } from "../util/proposal/progressToolkit";
+import { proposalOpacity2 } from "../util/proposal/progressToolkit";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
@@ -18,10 +18,11 @@ const Proposal: React.FC = () => {
         objectFit="cover"
       />
       <div
-        className={`${st.messageBox} ${st.box1}`}
-        style={{
-          opacity: proposalOpacity(support.scroll, 300, 500),
-        }}
+        className={`${st.messageBox} ${
+          proposalOpacity2(support.scroll, 0)
+            ? st.box1Open
+            : st.box1Open + " " + st.box1
+        }`}
       >
         知っているだろうか。
         <br />
@@ -36,10 +37,11 @@ const Proposal: React.FC = () => {
         </span>
       </div>
       <div
-        className={`${st.messageBox} ${st.box2}`}
-        style={{
-          opacity: proposalOpacity(support.scroll, 400, 600),
-        }}
+        className={`${st.messageBox} ${
+          proposalOpacity2(support.scroll, 1)
+            ? st.box2Open
+            : st.box2Open + " " + st.box2
+        }`}
       >
         彼らは使い慣れているという理由だけで頑なに紙を使い続けているが
         <br />
@@ -50,10 +52,11 @@ const Proposal: React.FC = () => {
         今後十分に人を集め同じように処理し続けることはできるだろうか？
       </div>
       <div
-        className={`${st.messageBox} ${st.box3}`}
-        style={{
-          opacity: proposalOpacity(support.scroll, 700, 1000),
-        }}
+        className={`${st.messageBox} ${
+          proposalOpacity2(support.scroll, 2)
+            ? st.box3Open
+            : st.box3Open + " " + st.box3
+        }`}
       >
         かつてのカルテは記録の側面が強かった。
         <br />
@@ -66,8 +69,11 @@ const Proposal: React.FC = () => {
         そのような時代の要請に紙は対応できるのだろうか。
       </div>
       <div
-        className={st.bigMessageBox}
-        style={{ opacity: proposalOpacity(support.scroll, 1100, 1300) }}
+        className={`${
+          proposalOpacity2(support.scroll, 3)
+            ? st.bigMessageBoxOpen
+            : st.bigMessageBoxOpen + " " + st.bigMessageBox
+        }`}
       >
         <span className={st.bigMessage}>デジタル化しよう</span>
         <div className={st.content}>

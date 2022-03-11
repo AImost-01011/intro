@@ -38,16 +38,18 @@
       font-size: 1rem;
     }
   }
+
   @include tv {
     width: 49.5%;
     box-shadow: none;
 
     .title {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
     }
 
     .shortDesc {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
   }
 }
@@ -145,7 +147,7 @@
 
 .modalBg {
   position: fixed;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(4px);
   inset: 0;
   background-color: rgba(0, 0, 0, 0.01);
   z-index: 6;
@@ -157,7 +159,7 @@
       backdrop-filter: blur(0);
     }
     100% {
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(4px);
     }
   }
 
@@ -177,11 +179,9 @@
     @keyframes insertAnime {
       0% {
         top: 100%;
-        opacity: 0;
       }
       100% {
         top: 50%;
-        opacity: 1;
       }
     }
 
@@ -189,14 +189,14 @@
       width: 100%;
 
       .title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 500;
         margin-bottom: 4px;
         user-select: none;
       }
 
       .content {
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.4rem;
         user-select: none;
       }
@@ -317,16 +317,17 @@
   }
   @include tv {
     .modal {
-      width: 540px;
+      width: 90%;
+      max-width: 1000px;
 
       .contentWrapper {
         .title {
-          font-size: 1.2rem;
+          font-size: 1.8rem;
         }
 
         .content {
-          font-size: 0.7rem;
-          line-height: 1rem;
+          font-size: 1rem;
+          line-height: 1.6rem;
         }
       }
 
@@ -336,11 +337,15 @@
         align-items: center;
 
         .returnBtn {
+          font-family: "Noto Sans JP", sans-serif;
+
           width: auto;
           height: auto;
           padding: 4px 16px;
-          font-size: 0.5rem;
+          font-size: 1rem;
           border-radius: 2px;
+          margin-right: 8px;
+          font-weight: 500;
         }
       }
     }
@@ -353,7 +358,7 @@
 
   @keyframes closeAnime {
     0% {
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(4px);
     }
     100% {
       backdrop-filter: blur(0);
@@ -361,16 +366,14 @@
   }
 
   .modal {
-    animation: outsertAnime 0.4s $cubic1;
+    animation: outsertAnime 0.2s;
     animation-fill-mode: forwards;
 
     @keyframes outsertAnime {
       0% {
-        top: 50%;
         opacity: 1;
       }
       100% {
-        top: 100%;
         opacity: 0;
       }
     }

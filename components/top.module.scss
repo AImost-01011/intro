@@ -8,7 +8,7 @@
     position: fixed;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 100vh;
 
     .relativeBox {
       position: relative;
@@ -72,12 +72,45 @@
           left: 20px;
           border-radius: 8px;
 
+          animation: topAnime 1s;
+          animation-fill-mode: forwards;
+
+          @keyframes topAnime {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
           .title {
             font-size: 2.4rem;
           }
 
           .subTitle {
             font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include th {
+    .fixedBox {
+      height: 100%;
+      .relativeBox {
+        .blurBox {
+          left: 100px;
+          width: 800px;
+          padding: 16px;
+
+          .title {
+            font-size: 3.6rem;
+          }
+
+          .subTitle {
+            font-size: 1.4rem;
           }
         }
       }

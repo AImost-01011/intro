@@ -23,21 +23,16 @@ const Tech: React.FC = () => {
         </div>
       </div>
 
-      <div
-        className={`${st.contentWrapperOpen} ${
-          isWeb(support.scroll) ? "" : st.contentWrapper
-        }`}
-      >
-        <div className={st.logoWrapper}>
-          <div className={st.relativeBox}>
-            <div className={st.html}>HTML</div>
-            <div className={st.css}>CSS</div>
-            <div className={st.js}>JS</div>
-            <div className={st.web}>Web</div>
-          </div>
-        </div>
+      <div className={st.contentWrapper}>
+        <div
+          className={`${st.techCardOpen} ${
+            isWeb(support.scroll) ? "" : st.techCard
+          }`}
+        >
+          <span className={st.title}>Conect With</span>
 
-        <div className={st.descWrapper}>
+          <span className={st.descTop}>知識と、皆と、強くつながる。</span>
+
           <div className={st.desc}>
             現在最も使われているアプリケーションの一つにインターネットブラウザがあります。
             <br />
@@ -49,25 +44,23 @@ const Tech: React.FC = () => {
             <br />
             だってそうでしょ？パソコンでもタブレットでも同じホームページを検索して見ることができることがその証拠です。
             <br />
-            そう考えるといま地球上にあるパソコン、タブレット、スマホが医療機器になりうるということなんだ。
+            そう考えるとどんなパソコンやタブレット、スマホでさえも医療機器になることができるんだ。
             <br />
-            それってワクワクしないですか？
+            だから災害が起きても難なく医療行為ができます。
             <br />
-            他になにか長所がないかな？
+            電子カルテが停電に弱いという弱点が指摘されているけれど
             <br />
-            緊急時でも使える特徴があるんだ。
+            現在の電子機器のバッテリーは余裕で1日くらいもちます。
             <br />
-            電子カルテの弱点に停電に弱いというものがあるんだが、
+            さらにモバイルバッテリーがあれば数日くらいもつことができます。
             <br />
-            医療スタッフのスマホ、タブレットの電源が付けさえすれば
+            これだけ使用できれば緊急時の代替品として合格でしょう。
             <br />
-            最低限の医療行為ができるようになるんだ。
+            まだまだメリットがあります。
             <br />
-            そういったデバイスはモバイルバッテリーとかで充電しながら使えるから
+            ブラウザを使っているのでわからないことがあればすぐに検索することだってできます。
             <br />
-            停電が復旧するまでの代替品として使うことができるのも特徴だね。
-            <br />
-            日本では災害が多いのでこういったアイデアも必要になるでしょ？
+            これで知識と、皆と、いつでも、強くつながることができます。
           </div>
         </div>
       </div>

@@ -1,30 +1,58 @@
 import { sv, sh, tv, th } from "../base";
 
-export const proposalOpacity = (
-  scroll: number,
-  start: number,
-  end: number
-): number => {
+export const proposalOpacity2 = (scroll: number, index: number) => {
   if (sv()) {
-    if (scroll < start) return 0;
-    else if (scroll > end) return 1;
-    else {
-      const alpha = 1 / (end - start);
-      const beta = start / (end - start);
-      return alpha * scroll - beta;
+    switch (index) {
+      case 0:
+        return scroll > 400;
+
+      case 1:
+        return scroll > 600;
+
+      case 2:
+        return scroll > 800;
+
+      case 3:
+        return scroll > 1300;
+
+      default:
+        return true;
     }
   } else if (sh()) {
-    const Start = (start * 2) / 3;
-    const End = (end * 4) / 5;
+    return true;
+  } else if (tv()) {
+    switch (index) {
+      case 0:
+        return scroll > 500;
 
-    if (scroll < Start) return 0;
-    else if (scroll > End) return 1;
-    else {
-      const alpha = 1 / (End - Start);
-      const beta = Start / (End - Start);
-      return alpha * scroll - beta;
+      case 1:
+        return scroll > 700;
+
+      case 2:
+        return scroll > 900;
+
+      case 3:
+        return scroll > 1300;
+
+      default:
+        return true;
     }
-  } else if (tv() || th()) {
-    return 1;
-  } else return 1;
+  } else if (th()) {
+    switch (index) {
+      case 0:
+        return scroll > 500;
+
+      case 1:
+        return scroll > 700;
+
+      case 2:
+        return scroll > 900;
+
+      case 3:
+        return scroll > 1300;
+
+      default:
+        return true;
+    }
+  } else return true;
 };

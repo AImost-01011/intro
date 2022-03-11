@@ -156,9 +156,9 @@
     padding: 16px 10%;
 
     .titleOuter {
-      height: 60px;
+      height: 80px;
       .titleInner {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
       }
     }
 
@@ -168,7 +168,7 @@
       justify-content: space-between;
 
       .imageWrapper {
-        width: 48%;
+        width: 38%;
       }
 
       .messageWrapper {
@@ -176,7 +176,7 @@
         flex-direction: column;
         justify-content: space-between;
         flex-wrap: wrap;
-        width: 50%;
+        width: 60%;
 
         .messageOuter {
           margin: 4px 0;
@@ -185,7 +185,8 @@
 
           .messageInner {
             padding: 12px 0;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
           }
         }
       }
@@ -193,21 +194,35 @@
   }
 
   @include th {
-    padding: 16px 10%;
+    padding: 16px 6%;
+
+    .titleOuter {
+      height: 100px;
+      .titleInner {
+        font-size: 2.4rem;
+      }
+    }
+
     .contents {
       flex-direction: row;
 
       .imageWrapper {
-        height: 400px;
+        height: 460px;
         margin-right: 4px;
+        width: 40%;
       }
 
       .messageWrapper {
         flex-direction: column;
         justify-content: space-around;
+        width: 56%;
 
         .messageOuter {
           width: 100%;
+
+          .messageInner {
+            font-size: 1.4rem;
+          }
         }
       }
     }
@@ -216,18 +231,23 @@
 
 .modalBg {
   position: fixed;
-  backdrop-filter: blur(16px);
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.01);
   z-index: 6;
-  animation: openAnime 0.4s linear;
+  overflow: hidden;
+
+  animation: openAnime 0.6s;
+  animation-fill-mode: forwards;
 
   @keyframes openAnime {
-    0% {
+    from {
       backdrop-filter: blur(0);
     }
-    100% {
-      backdrop-filter: blur(16px);
+    to {
+      backdrop-filter: blur(4px);
     }
   }
 
@@ -247,12 +267,10 @@
 
     @keyframes insertAnime {
       0% {
-        top: 100%;
-        opacity: 0;
+        top: 160%;
       }
       100% {
         top: 50%;
-        opacity: 1;
       }
     }
 
@@ -262,6 +280,9 @@
     @include tv {
       width: 700px;
     }
+    @include th {
+      width: 900px;
+    }
   }
 }
 
@@ -270,7 +291,7 @@
 
   @keyframes closeAnime {
     0% {
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(4px);
     }
     100% {
       backdrop-filter: blur(0);
@@ -278,15 +299,14 @@
   }
 
   .modal {
-    animation: outsertAnime 0.4s $cubic1;
+    animation: outsertAnime 0.2s;
+    animation-fill-mode: forwards;
 
     @keyframes outsertAnime {
       0% {
-        top: 50%;
         opacity: 1;
       }
       100% {
-        top: 100%;
         opacity: 0;
       }
     }

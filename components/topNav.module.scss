@@ -1,6 +1,6 @@
 @import "../styles/base.module.scss";
 
-.topNav {
+.topNavOpen {
   width: 100%;
   position: fixed;
   left: 0;
@@ -9,7 +9,9 @@
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
 
-  height: 60px;
+  height: 50px;
+  top: 0;
+  transition: 1s;
 
   .titleWrapper {
     height: 100%;
@@ -37,17 +39,17 @@
   }
 
   @include sh {
-    height: 50px;
+    height: 60px;
 
     .titleWrapper {
       .title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin: initial;
         margin-right: 12px;
       }
 
       .subTitle {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         display: block;
       }
     }
@@ -59,12 +61,39 @@
 
     .titleWrapper {
       .title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .subTitle {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
       }
     }
+  }
+
+  @include th {
+    height: 80px;
+
+    .titleWrapper {
+      .title {
+        font-size: 2rem;
+      }
+
+      .subTitle {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.topNav {
+  top: -60px;
+  transition: 1s;
+
+  @include tv {
+    top: -60px;
+  }
+
+  @include th {
+    top: -80px;
   }
 }

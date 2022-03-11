@@ -27,15 +27,16 @@ const Usability: React.FC = () => {
         </div>
       </div>
 
-      <div
-        className={`${st.contentWrapperOpen} ${
-          isMagic(support.scroll) ? "" : st.contentWrapper
-        }`}
-      >
-        <div className={st.magic}>+ Magic</div>
+      <div className={st.contentWrapper}>
+        <div
+          className={`${st.magicCardOpen} ${
+            isMagic(support.scroll) ? "" : st.magicCard
+          }`}
+        >
+          <span className={st.magic}>+ Magic</span>
 
-        <div className={st.descWrapper}>
-          <div className={st.descTop}>なじみある動きで思い通り</div>
+          <span className={st.descTop}>なじみある動きで思い通り</span>
+
           <div className={st.desc}>
             最近使われているアプリケーションのほとんどは取扱説明書がありません。
             <br />

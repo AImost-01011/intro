@@ -6,7 +6,7 @@ import { RootState } from "../redux/store";
 
 import st from "./top.module.scss";
 import friendshipImg from "../public/friendship.jpg";
-import { blurMove, topMove, topOpacity } from "../util/top/progressToolkit";
+import { blurMove, topMove } from "../util/top/progressToolkit";
 
 const Top: React.FC = () => {
   const support = useSelector((state: RootState) => state.support);
@@ -17,7 +17,7 @@ const Top: React.FC = () => {
         className={st.fixedBox}
         style={{
           top: topMove(support.scroll),
-          opacity: topOpacity(support.scroll),
+          display: `${support.scroll > 1200 ? "none" : "block"}`,
         }}
       >
         <div className={st.relativeBox}>

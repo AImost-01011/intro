@@ -25,19 +25,43 @@
     }
   }
 
-  .box1 {
+  .box1Open {
     top: 120px;
+    opacity: 1;
+    transition: 0.8s;
+    transition-timing-function: $cubic1;
+  }
+  .box1 {
+    top: 160px;
+    opacity: 0;
+    transition: 0.6s;
   }
 
-  .box2 {
+  .box2Open {
     top: 340px;
+    opacity: 1;
+    transition: 0.8s;
+    transition-timing-function: $cubic1;
+  }
+  .box2 {
+    top: 380px;
+    opacity: 0;
+    transition: 0.6s;
   }
 
-  .box3 {
+  .box3Open {
     top: 600px;
+    opacity: 1;
+    transition: 0.8s;
+    transition-timing-function: $cubic1;
+  }
+  .box3 {
+    top: 640px;
+    opacity: 0;
+    transition: 0.6s;
   }
 
-  .bigMessageBox {
+  .bigMessageBoxOpen {
     position: absolute;
     color: white;
     user-select: none;
@@ -53,6 +77,9 @@
     transform: translateX(-50%);
     bottom: 140px;
     padding: 12px;
+    opacity: 1;
+    transition: 0.8s;
+    transition-timing-function: $cubic1;
 
     .bigMessage {
       font-weight: bold;
@@ -69,25 +96,23 @@
     }
   }
 
+  .bigMessageBox {
+    bottom: 100px;
+    opacity: 0;
+    transition: 0.6s;
+  }
+
   @include sh {
+    height: 1200px;
+
     .messageBox {
-      width: 400px;
+      width: 90%;
       left: initial;
       transform: initial;
       font-size: 1rem;
-    }
-
-    .box1 {
-      top: 80px;
-      left: 10%;
-    }
-
-    .box2 {
-      right: 14%;
-    }
-
-    .box3 {
-      left: 17%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
     }
 
     .bigMessageBox {
@@ -109,48 +134,144 @@
   }
 
   @include tv {
-    height: 1000px;
+    height: 1200px;
     .messageBox {
       width: auto;
       left: initial;
       transform: initial;
-      font-size: 0.8rem;
+      font-size: 1rem;
+      line-height: 1.7rem;
 
       .tip {
-        font-size: 0.4rem;
+        font-size: 0.8rem;
         color: rgb(218, 218, 218);
       }
     }
-    .box1 {
-      top: 80px;
+    .box1Open {
+      top: 120px;
       left: 6%;
+      opacity: 1;
+      transition: 0.8s;
+      transition-timing-function: $cubic1;
+    }
+    .box1 {
+      top: 160px;
+      left: 6%;
+      opacity: 0;
     }
 
-    .box2 {
-      top: 240px;
+    .box2Open {
+      top: 340px;
       right: 7%;
+      opacity: 1;
+      transition: 0.8s;
+      transition-timing-function: $cubic1;
+    }
+    .box2 {
+      top: 380px;
+      right: 7%;
+      opacity: 0;
     }
 
+    .box3Open {
+      top: 600px;
+      left: 12%;
+      opacity: 1;
+      transition: 0.8s;
+      transition-timing-function: $cubic1;
+    }
     .box3 {
       left: 12%;
-      top: 400px;
+      top: 640px;
+      opacity: 0;
     }
 
-    .bigMessageBox {
-      width: 500px;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 140px;
-      padding: 12px;
+    .bigMessageBoxOpen {
+      width: 90vw;
+      padding: 16px;
+      white-space: nowrap;
+      overflow: hidden;
 
       .bigMessage {
-        font-size: 1.4rem;
-        margin-bottom: 16px;
+        font-size: 1.8rem;
       }
 
       .content {
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
+    }
+    .bigMessageBox {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 40vw;
+      bottom: 100px;
+    }
+  }
+
+  @include th {
+    height: 1400px;
+    .messageBox {
+      font-size: 1.2rem;
+    }
+
+    .box1Open {
+      top: 120px;
+      left: 10%;
+      opacity: 1;
+      transition: 0.8s;
+      transition-timing-function: $cubic1;
+    }
+    .box1 {
+      top: 160px;
+      left: 10%;
+      opacity: 0;
+    }
+
+    .box2Open {
+      top: 340px;
+      right: 12%;
+      opacity: 1;
+      transition: 0.8s;
+      transition-timing-function: $cubic1;
+    }
+    .box2 {
+      top: 380px;
+      right: 12%;
+      opacity: 0;
+    }
+
+    .box3Open {
+      top: 600px;
+      left: 14%;
+      opacity: 1;
+      transition: 0.8s;
+      transition-timing-function: $cubic1;
+    }
+    .box3 {
+      left: 14%;
+      top: 640px;
+      opacity: 0;
+    }
+
+    .bigMessageBoxOpen {
+      width: 900px;
+      padding: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+
+      .bigMessage {
+        font-size: 1.8rem;
+      }
+
+      .content {
+        font-size: 1rem;
+      }
+    }
+    .bigMessageBox {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 20vw;
+      bottom: 100px;
     }
   }
 }

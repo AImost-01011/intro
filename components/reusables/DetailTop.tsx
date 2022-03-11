@@ -12,11 +12,7 @@ import pressImg from "../../public/press-img.jpg";
 import pressProImg from "../../public/pressPro-img.jpg";
 import philoImg from "../../public/philosophy-img.jpg";
 import { RootState } from "../../redux/store";
-import {
-  detailTopHeight,
-  detailTopOpacity,
-  detailTopTop,
-} from "../../util/detailTop/progressToolkit";
+import { detailTopBlur } from "../../util/detailTop/progressToolkit";
 
 const DetailTop: React.FC = () => {
   const showList = [
@@ -334,12 +330,9 @@ const DetailTop: React.FC = () => {
     <div className={st.detailTop}>
       <div className={st.detailBox} />
       <div
-        className={st.fixedBox}
-        style={{
-          top: `-${detailTopTop(support.scroll)}px`,
-          height: `calc(80vh + ${detailTopHeight(support.scroll)}px)`,
-          opacity: detailTopOpacity(support.scroll),
-        }}
+        className={`${st.fixedBox} ${
+          detailTopBlur(support.scroll) ? st.fixedBoxBlur : ""
+        }`}
       >
         <div className={st.relativeBox}>
           <Image src={topImg} alt="buddy img" objectFit="cover" layout="fill" />

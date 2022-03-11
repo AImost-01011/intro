@@ -3,18 +3,18 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
 import st from "./topNav.module.scss";
-import { topNavMove, topNavOpacity } from "../util/topNav/progresToolkit";
+import { topNavMove } from "../util/topNav/progresToolkit";
 
 const TopNav: React.FC = () => {
   const support = useSelector((state: RootState) => state.support);
 
   return (
     <nav
-      className={st.topNav}
-      style={{
-        top: `${topNavMove(support.scroll)}px`,
-        opacity: topNavOpacity(support.scroll),
-      }}
+      className={`${
+        topNavMove(support.scroll)
+          ? st.topNavOpen
+          : st.topNavOpen + " " + st.topNav
+      }`}
     >
       <div className={st.titleWrapper}>
         <span className={st.title}>Lively Health, Lovely Life</span>
